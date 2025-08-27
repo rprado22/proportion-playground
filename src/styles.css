@@ -1,0 +1,156 @@
+/* Friendly, colorful aesthetic inspired by your screenshot. */
+/* Tailwind is NOT used to keep the bundle minimal per constraints. */
+
+:root{
+  --bg:#f2f7fb;
+  --panel:#ffffff;
+  --ink:#0b2545;
+  --ink-2:#415a77;
+  --muted:#6c7a92;
+  --chip:#0ea5e9;
+  --chip-2:#10b981;
+  --chip-3:#f59e0b;
+  --danger:#ef4444;
+  --ok:#16a34a;
+  --shadow:0 10px 24px rgba(2,15,43,0.08);
+  --radius:16px;
+}
+
+*{box-sizing:border-box}
+html,body,#root{height:100%}
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+  color:var(--ink);
+  background:var(--bg);
+}
+
+.app{
+  max-width:1100px;
+  margin:24px auto 64px;
+  padding:0 16px;
+}
+
+.header{
+  display:flex; align-items:center; gap:16px; justify-content:space-between;
+  margin-bottom:8px;
+}
+
+.title{
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 800;
+  line-height:1.1;
+}
+
+.subtitle{
+  margin-top:4px; color:var(--muted);
+  font-size:14px;
+}
+
+.row{
+  display:grid; grid-template-columns: 1fr 320px; gap:16px; align-items:start;
+}
+
+.card{
+  background:var(--panel);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:16px 18px;
+}
+
+.right .card{ position:sticky; top:16px }
+
+.section-title{
+  font-size:18px; font-weight:700; margin-bottom:8px;
+}
+
+.controls{
+  display:grid; gap:12px; grid-template-columns:1fr 1fr;
+}
+
+.control{
+  background:#f8fafc; border-radius:12px; padding:12px; border:1px solid #e5e7eb;
+}
+
+.control h4{ margin:0 0 6px }
+.small{ color:var(--muted); font-size:12px }
+
+.range{
+  width:100%;
+}
+
+.pill-row{ display:flex; flex-wrap:wrap; gap:8px; margin-top:8px }
+.pill{
+  background:#0b6ef3; color:white; border:none; padding:8px 12px; border-radius:999px;
+  font-weight:600; cursor:pointer; transition:transform .05s ease;
+}
+.pill:active{ transform:scale(0.98) }
+.pill.alt{ background:var(--chip-2)}
+.pill.warn{ background:var(--chip-3)}
+.pill.ghost{ background:white; color:#0b6ef3; border:1px solid #bfdbfe}
+
+.kpi{
+  display:flex; gap:24px; align-items:baseline; flex-wrap:wrap; margin-top:8px;
+}
+.kpi .big{
+  font-size:28px; font-weight:800;
+}
+.kpi .tag{
+  padding:4px 10px; border-radius:999px; background:#ecfeff; color:#0369a1; border:1px solid #a5f3fc; font-weight:700; font-size:12px;
+}
+
+.visuals{
+  display:grid; gap:16px; grid-template-columns:1fr;
+  margin-top:8px;
+}
+
+.canvas{
+  background:linear-gradient(180deg, #ffffff, #fbfdff);
+  border:1px solid #e6eef9; padding:16px; border-radius:12px;
+}
+
+/* Double number line */
+.dnl{ display:grid; gap:14px }
+.line{
+  height:4px; background:#e5e7eb; border-radius:999px; position:relative;
+}
+.tick{
+  position:absolute; top:-6px; width:2px; height:16px; background:#cbd5e1
+}
+.marker{
+  position:absolute; top:-6px; height:16px; width:16px; border-radius:50%;
+  background:#0ea5e9; transform:translateX(-50%);
+  border:2px solid white; box-shadow:0 4px 10px rgba(0,0,0,.15)
+}
+.line-label{ display:flex; justify-content:space-between; font-size:12px; color:var(--ink-2) }
+
+.tape{
+  display:flex; gap:12px; align-items:center; flex-wrap:wrap;
+}
+.tape-bar{ display:flex; gap:2px; height:28px }
+.tile{
+  width:24px; height:100%; border-radius:4px;
+}
+.tile.a{ background:#60a5fa }
+.tile.b{ background:#fca5a5 }
+
+/* Table */
+table{ width:100%; border-collapse:collapse; font-size:14px }
+th, td{ border:1px solid #e5e7eb; padding:8px; text-align:center }
+th{ background:#f8fafc }
+
+/* Hints / WIDA */
+.hint{
+  background:#4023c745; border-radius:16px; color:white;
+  background:linear-gradient(135deg, #5b21b6, #4c1d95 60%, #1d4ed8);
+  padding:16px; box-shadow:var(--shadow);
+}
+.hint h3{ margin-top:0 }
+.hint p b{ font-weight:800 }
+
+/* Exit Ticket */
+.qa{ background:#f8fafc; border:1px solid #e5e7eb; padding:12px; border-radius:12px }
+.details{ color:#0b6ef3; cursor:pointer; font-weight:700 }
+
+/* Footer note */
+.footer{ color:var(--muted); font-size:12px; margin-top:10px }
