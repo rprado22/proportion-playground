@@ -26,6 +26,10 @@ jobs:
         with:
           node-version: 20
 
+      # Create a lockfile (since the repo doesn't include one yet)
+      - name: Create lockfile
+        run: npm install --package-lock-only
+
       - name: Install
         run: npm ci
 
