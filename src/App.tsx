@@ -385,7 +385,7 @@ function PropTable({ a, b }: { a: number; b: number }) {
           <th>A</th>
           <th>B</th>
           <th>A:B</th>
-          <th>A/B</th>
+          <th>B/A  or Y/X</th>
         </tr>
       </thead>
       <tbody>
